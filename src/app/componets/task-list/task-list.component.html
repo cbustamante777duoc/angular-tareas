@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-12">
+
+    <div class="row">
+      <div class="col-12">
+        <h1>tareas pendientes</h1>
+
+        <div *ngIf="taskListNoCompleted.length === 0">
+          <span>felicidades no tienes tareas</span>
+        </div>
+        <button type="button" class="btn btn-primary">
+          <i class="fa fa-plus" aria-hidden="true"></i> añadir nuevas tareas
+        </button>
+      </div>
+    </div>
+    
+
+    <div class="row">
+      <div class="col-12">
+        <h1>tareas completada</h1>
+
+        <button type="button" class="btn btn-primary">
+          <i class="fa fa-eye-slash" aria-hidden="true"></i> ocultar tareas
+        </button>
+
+        <div *ngIf="taskListCompleted.length === 0">
+          <span>no tienes tareas completadas</span>
+        </div>
+        
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
