@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row rounded mt-2 mb-2" id="task-list">
   <div class="col-12">
 
     <div class="row">
@@ -8,9 +8,22 @@
         <div *ngIf="taskListNoCompleted.length === 0">
           <span>felicidades no tienes tareas</span>
         </div>
-        <button type="button" class="btn btn-primary">
+        
+        <button type="button" class="btn btn-primary" *ngIf="!showInputTask" (click)="showInputTextTask()">
           <i class="fa fa-plus" aria-hidden="true"></i> añadir nuevas tareas
         </button>
+
+        <div *ngIf="showInputTask" class="input-group mt-2 mb-2">
+          <input type="text" class="form-control" #task (keydown.enter)="addTask (task.value)">
+          <span class="input-group-btn" >
+            <button type="button" class="btn btn-primary" (click)="addTask (task.value)">añadir</button>
+          </span>
+        </div>
+
+        <div class="alert alert-danger"  *ngIf="errorInput" role="alert">
+          <strong>la tarea no puede estar vacia</strong>
+        </div>
+
       </div>
     </div>
     
