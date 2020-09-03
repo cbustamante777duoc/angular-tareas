@@ -47,7 +47,7 @@ export class TaskListComponent implements OnInit {
       this.errorInput = false;
       this.showInputTask = false;
 
-      console.log(this.taskListNoCompleted);
+     
       
     } else {
       this.errorInput = true;

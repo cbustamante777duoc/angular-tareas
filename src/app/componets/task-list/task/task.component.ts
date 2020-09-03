@@ -1,11 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Task } from './../../../interfaces/Task';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-task',
   templateUrl: './task.component.html',
-  styleUrls: ['./task.component.scss']
+  styleUrls: ['./task.component.css']
 })
 export class TaskComponent implements OnInit {
+
+  @Input() task: Task;
+  @Input() index: number;
 
   constructor() { }
 

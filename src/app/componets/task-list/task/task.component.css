@@ -1,0 +1,26 @@
+
+.block-date{
+    border-top:1px solid #000;
+    border-bottom:1px solid #000;
+    border-left:1px solid #000;
+    text-align: center;
+}
+
+.block-description{
+    border-top:1px solid #000;
+    border-bottom:1px solid #000;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.block-actions{
+    border-top:1px solid #000;
+    border-bottom:1px solid #000;
+    border-right:1px solid #000;
+}
+
+.icon-action{
+    font-size: 32px;
+    cursor: pointer;
+    margin-right: 5px;
+}

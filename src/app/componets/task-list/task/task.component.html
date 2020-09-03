@@ -1,3 +1,14 @@
-<p>
-  task works!
-</p>
+<div class="row no-gutters mb-2 ">
+<div class="col-2 block-date rounded-left">
+    {{task.date}} 
+</div>
+
+<div class="col-8 block-description" [title]="task.description">
+    {{task.description}}
+</div>
+
+<div class="col-2 block-actions rounded-right text-right">
+    <i class="icon-action fa fa-check text-success"></i>
+    <i class="icon-action fa fa-remove text-danger"></i>
+</div>
+</div>

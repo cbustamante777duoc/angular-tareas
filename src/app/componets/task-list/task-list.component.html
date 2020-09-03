@@ -5,21 +5,35 @@
       <div class="col-12">
         <h1>tareas pendientes</h1>
 
+        <!--si hay alguna tarea-->
+        <div *ngIf="taskListNoCompleted.length > 0">
+          <app-task *ngFor="let task of taskListNoCompleted; let index=index"
+          [index]="index"
+          [task]="task">
+            
+           </app-task>
+        </div>
+
+        <!--si no hay tareas completadas-->
         <div *ngIf="taskListNoCompleted.length === 0">
           <span>felicidades no tienes tareas</span>
         </div>
         
+        <!--si la propiedad showInputTask es false al momento de hacer click-->
         <button type="button" class="btn btn-primary" *ngIf="!showInputTask" (click)="showInputTextTask()">
           <i class="fa fa-plus" aria-hidden="true"></i> añadir nuevas tareas
         </button>
 
+        <!--agregando dos eventos si no hay tareas uno al momento de presionar enter y otro el click-->
         <div *ngIf="showInputTask" class="input-group mt-2 mb-2">
+          <!--agrega una tarea-->
           <input type="text" class="form-control" #task (keydown.enter)="addTask (task.value)">
           <span class="input-group-btn" >
             <button type="button" class="btn btn-primary" (click)="addTask (task.value)">añadir</button>
           </span>
         </div>
 
+        <!--en caso de fallar mostar el un mensaje de error-->
         <div class="alert alert-danger"  *ngIf="errorInput" role="alert">
           <strong>la tarea no puede estar vacia</strong>
         </div>
