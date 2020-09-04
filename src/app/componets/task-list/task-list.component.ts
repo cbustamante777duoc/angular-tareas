@@ -54,8 +54,23 @@ export class TaskListComponent implements OnInit {
       
     }
 
-    
+  }
 
+  //funcion que permite eliminar un elemento desde la posicion indicada
+  removeTask($event){
+    this.taskListNoCompleted.splice($event,1);
+
+  }
+
+  completeTask($event){
+    const task = this.taskListNoCompleted[$event];
+    //va a cambiar la tarea a completada
+    task.completed = true;
+    //va a agregar la nueva fecha de la tarea
+    task.date = new Date();
+    //elimna la tarea del arreglo de las NO completadas
+    this.taskListNoCompleted.splice($event,1);
+    this.taskListCompleted.push(task);
   }
 
 }

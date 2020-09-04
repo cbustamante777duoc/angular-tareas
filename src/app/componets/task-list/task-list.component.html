@@ -9,10 +9,13 @@
         <div *ngIf="taskListNoCompleted.length > 0">
           <app-task *ngFor="let task of taskListNoCompleted; let index=index"
           [index]="index"
-          [task]="task">
+          [task]="task"
+          (remove)="removeTask($event)"
+          (complete)="completeTask($event)">
             
            </app-task>
         </div>
+
 
         <!--si no hay tareas completadas-->
         <div *ngIf="taskListNoCompleted.length === 0">
@@ -49,6 +52,16 @@
         <button type="button" class="btn btn-primary">
           <i class="fa fa-eye-slash" aria-hidden="true"></i> ocultar tareas
         </button>
+
+        <div *ngIf="taskListCompleted.length > 0">
+          <app-task *ngFor="let task of taskListCompleted; let index=index"
+          [index]="index"
+          [task]="task"
+          >
+            
+           </app-task>
+        </div>
+
 
         <div *ngIf="taskListCompleted.length === 0">
           <span>no tienes tareas completadas</span>
