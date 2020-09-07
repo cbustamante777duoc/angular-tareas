@@ -14,6 +14,8 @@ export class TaskListComponent implements OnInit {
 
   public showInputTask: boolean;
   public errorInput:boolean;
+  public showCompleted:boolean;
+
 
 
 
@@ -22,6 +24,7 @@ export class TaskListComponent implements OnInit {
     this.taskListNoCompleted = [];
     this.showInputTask = false;
     this.errorInput = false;
+    this.showCompleted = true;
     
   }
 
@@ -71,6 +74,11 @@ export class TaskListComponent implements OnInit {
     //elimna la tarea del arreglo de las NO completadas
     this.taskListNoCompleted.splice($event,1);
     this.taskListCompleted.push(task);
+  }
+
+  //funcion que al momento de hacer click va a cambiar el valor de showCompleted al inverso
+  showTaskCompleted(){
+    this.showCompleted = !this.showCompleted;
   }
 
 }

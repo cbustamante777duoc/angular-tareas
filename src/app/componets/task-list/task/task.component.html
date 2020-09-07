@@ -1,12 +1,17 @@
-<div class="row no-gutters mb-2 ">
+<div class="row task no-gutters mb-2 ">
 <div class="col-2 block-date rounded-left">
     {{task.date | date:'dd/MMMM/yyyy'}} 
 </div>
 
-<div class="col-8 block-description" [title]="task.description">
+<!--sino esta completado dejar col-8-->
+<!--si lo esta agregar css y aumentar a un col-10 -->
+<div class="block-description" 
+    [ngClass]="{'col-8': !task.completed, 'col-10 del block-description-completed rounded-right':task.completed}"
+    [title]="task.description">
     {{task.description}}
 </div>
 
+<!--sino esta completada la tarea-->
 <div *ngIf="!task.completed" class="col-2 block-actions rounded-right text-right">
     <i class="icon-action fa fa-check text-success"(click)="taskCheckedEvent()"></i>
     <i class="icon-action fa fa-remove text-danger"(click)="removeEvent()"></i>

@@ -49,21 +49,26 @@
       <div class="col-12">
         <h1>tareas completada</h1>
 
-        <button type="button" class="btn btn-primary">
-          <i class="fa fa-eye-slash" aria-hidden="true"></i> ocultar tareas
+        <button type="button" class="btn btn-primary mb-2" (click)="showTaskCompleted()">
+          <span *ngIf="showCompleted">
+            <i class="fa fa-eye-slash" aria-hidden="true"></i> ocultar tareas
+          </span>
+          <span *ngIf="!showCompleted">
+            <i class="fa fa-eye" aria-hidden="true"></i> mostrar tareas
+          </span>
+          
         </button>
 
-        <div *ngIf="taskListCompleted.length > 0">
+        <div *ngIf="taskListCompleted.length > 0 && showCompleted">
           <app-task *ngFor="let task of taskListCompleted; let index=index"
           [index]="index"
-          [task]="task"
-          >
-            
-           </app-task>
+          [task]="task">
+
+          </app-task>
         </div>
 
 
-        <div *ngIf="taskListCompleted.length === 0">
+        <div *ngIf="taskListCompleted.length === 0 && showCompleted">
           <span>no tienes tareas completadas</span>
         </div>
         
