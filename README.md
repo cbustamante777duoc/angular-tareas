@@ -1,5 +1,9 @@
 # Tareas
 
+app de tareas donde se podra agregar o eliminar tareas nuevas
+dentro de esta app se usa 
+input, output, eventEmitter, ngClass, ngIf y ngFor
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.4.
 
 ## Development server
